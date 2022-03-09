@@ -1,4 +1,4 @@
-package com.example.demo;
+package Meldia.Alegla.Pokedex.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.Objects;

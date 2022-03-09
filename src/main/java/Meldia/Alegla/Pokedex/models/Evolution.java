@@ -1,6 +1,6 @@
-package models;
+package Meldia.Alegla.Pokedex.models;
 
-import models.EvolutionChain;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
