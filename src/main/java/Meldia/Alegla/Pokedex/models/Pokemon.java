@@ -2,13 +2,16 @@ package Meldia.Alegla.Pokedex.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Pokemon {
+public class Pokemon implements Serializable{
 
-    private Integer id;
+    
+	private static final long serialVersionUID = 1L;
+	private Integer id;
     private String name;
     private Integer base_experience;
     private Integer height;

@@ -1,11 +1,16 @@
 package Meldia.Alegla.Pokedex.models;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-class Sprites {
+
+public class Sprites implements Serializable{
     
-    private String front_default;
+    
+	private static final long serialVersionUID = 1L;
+	private String front_default;
 
     public Sprites() {
     }

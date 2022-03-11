@@ -1,11 +1,15 @@
 package Meldia.Alegla.Pokedex.models;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class EvolutionChain {
+public class EvolutionChain implements Serializable{
     
-    private String url;
+    
+	private static final long serialVersionUID = 1L;
+	private String url;
 
     public EvolutionChain() {
     }

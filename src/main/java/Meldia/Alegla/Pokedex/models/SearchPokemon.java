@@ -2,16 +2,13 @@ package Meldia.Alegla.Pokedex.models;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+public class SearchPokemon implements Serializable{
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Type implements Serializable{
-	
-	
 	private static final long serialVersionUID = 1L;
 	private String name;
-	
-	public Type() {}
+	private String id;
+
+	public SearchPokemon() {}
 
 	public String getName() {
 		return name;
@@ -21,11 +18,14 @@ public class Type implements Serializable{
 		this.name = name;
 	}
 
-	@Override
-	public String toString() {
-		return "name=" + name;
+	public String getId() {
+		return id;
 	}
-	
-	
 
+	public void setId(String id) {
+		this.id = id;
+	}
+
+		
+	
 }
