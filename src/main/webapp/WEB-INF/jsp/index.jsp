@@ -110,6 +110,7 @@
                             <div class="poke-types">
                                 <div>
                                     <p><span th:text="${type}" /></p>
+                                    <p><span th:text="${type2}" /></p>
                                 </div>
                             </div>
                             <div class="poke-stats">
