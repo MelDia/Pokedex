@@ -1,12 +1,16 @@
-package com.example.demo;
+package Meldia.Alegla.Pokedex.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
 import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Home {
+public class Home implements Serializable{
     
-    private String front_default;
+    
+	private static final long serialVersionUID = 1L;
+	private String front_default;
     private String front_female;
     private String front_shiny;
     private String front_shiny_female;

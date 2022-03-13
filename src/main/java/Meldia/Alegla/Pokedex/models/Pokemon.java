@@ -1,30 +1,35 @@
-package models;
+package Meldia.Alegla.Pokedex.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Pokemon {
+public class Pokemon implements Serializable{
 
-    private Integer id;
+    
+	private static final long serialVersionUID = 1L;
+	private Integer id;
     private String name;
     private Integer base_experience;
     private Integer height;
     private Integer weight;
-    private Species species;
+    private List<Types> types;
     private Sprites sprites;
 
     public Pokemon() {
     }
 
-    public Pokemon(Integer id, String name, Integer base_experience, Integer height, Integer weight, Species species, Sprites sprites) {
+    public Pokemon(Integer id, String name, Integer base_experience, Integer height, Integer weight, Sprites sprites, List<Types> types) {
         this.id = id;
         this.name = name;
         this.base_experience = base_experience;
         this.height = height;
         this.weight = weight;
-        this.species = species;
         this.sprites = sprites;
+        this.types = types;
     }
 
     public Integer getId() {
@@ -67,23 +72,23 @@ public class Pokemon {
         this.weight = weight;
     }
 
-    public Species getSpecies() {
-        return species;
-    }
+    public List<Types> getTypes() {
+		return types;
+	}
 
-    public void setSpecies(Species species) {
-        this.species = species;
-    }
+	public void setTypes(List<Types> types) {
+		this.types = types;
+	}
 
-    public Sprites getSprites() {
-        return sprites;
-    }
+	public Sprites getSprites() {
+		return sprites;
+	}
 
-    public void setSprites(Sprites sprites) {
-        this.sprites = sprites;
-    }
+	public void setSprites(Sprites sprites) {
+		this.sprites = sprites;
+	}
 
-    @Override
+	@Override
     public int hashCode() {
         int hash = 7;
         hash = 31 * hash + Objects.hashCode(this.id);
@@ -116,7 +121,7 @@ public class Pokemon {
         sb.append(", base_experience=").append(base_experience);
         sb.append(", height=").append(height);
         sb.append(", weight=").append(weight);
-        sb.append(", species=").append(species);
+        sb.append(", types=").append(types);
         sb.append(", sprites=").append(sprites);
         sb.append('}');
         return sb.toString();
