@@ -7,22 +7,23 @@ import java.util.List;
 import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Pokemon implements Serializable{
+public class Pokemon implements Serializable {
 
-    
-	private static final long serialVersionUID = 1L;
-	private Integer id;
+    private static final long serialVersionUID = 1L;
+    private Integer id;
     private String name;
     private Integer base_experience;
     private Integer height;
     private Integer weight;
     private List<Types> types;
     private Sprites sprites;
+    private List<Stats> stats;
 
     public Pokemon() {
     }
 
-    public Pokemon(Integer id, String name, Integer base_experience, Integer height, Integer weight, Sprites sprites, List<Types> types) {
+    public Pokemon(Integer id, String name, Integer base_experience, Integer height,
+            Integer weight, Sprites sprites, List<Types> types, List<Stats> stats) {
         this.id = id;
         this.name = name;
         this.base_experience = base_experience;
@@ -30,6 +31,7 @@ public class Pokemon implements Serializable{
         this.weight = weight;
         this.sprites = sprites;
         this.types = types;
+        this.stats = stats;
     }
 
     public Integer getId() {
@@ -73,22 +75,30 @@ public class Pokemon implements Serializable{
     }
 
     public List<Types> getTypes() {
-		return types;
-	}
+        return types;
+    }
 
-	public void setTypes(List<Types> types) {
-		this.types = types;
-	}
+    public void setTypes(List<Types> types) {
+        this.types = types;
+    }
 
-	public Sprites getSprites() {
-		return sprites;
-	}
+    public Sprites getSprites() {
+        return sprites;
+    }
 
-	public void setSprites(Sprites sprites) {
-		this.sprites = sprites;
-	}
+    public void setSprites(Sprites sprites) {
+        this.sprites = sprites;
+    }
 
-	@Override
+    public List<Stats> getStats() {
+        return stats;
+    }
+
+    public void setStats(List<Stats> stats) {
+        this.stats = stats;
+    }
+
+    @Override
     public int hashCode() {
         int hash = 7;
         hash = 31 * hash + Objects.hashCode(this.id);
@@ -123,6 +133,7 @@ public class Pokemon implements Serializable{
         sb.append(", weight=").append(weight);
         sb.append(", types=").append(types);
         sb.append(", sprites=").append(sprites);
+        sb.append(", stats=").append(stats);
         sb.append('}');
         return sb.toString();
     }

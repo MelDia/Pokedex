@@ -40,6 +40,7 @@ public class PokeControl {
 	    	model.addAttribute("weight", pokemon.getWeight());
 	    	model.addAttribute("type", pokemon.getTypes().get(0).getType().getName());
 	    	model.addAttribute("sprite", pokemon.getSprites().getFront_default());
+                model.addAttribute("stats", pokemon.getStats().get(0).toString());
 	    	return "index";
 		    }
 	    

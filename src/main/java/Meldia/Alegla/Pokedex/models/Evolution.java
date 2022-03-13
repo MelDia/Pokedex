@@ -6,10 +6,9 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Evolution implements Serializable{
+public class Evolution implements Serializable{    
     
-    
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 	//OBJETO DE ESPECIES   
     private EvolutionChain evolution_chain;
 
