@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class Stats implements Serializable{
     private static final long serialVersionUID = 1L;
     private Stat stat;
-    private String base_stat;
+    private int base_stat;
 
     public Stats() {
     }
@@ -20,17 +20,18 @@ public class Stats implements Serializable{
         this.stat = stat;
     }
 
-    public String getBase_stat() {
+    public int getBase_stat() {
         return base_stat;
     }
 
-    public void setBase_stat(String base_stat) {
+    public void setBase_stat(int base_stat) {
         this.base_stat = base_stat;
     }
 
     @Override
     public String toString() {
-        return "Stats{" + stat + ", base_stat=" + base_stat + '}';
+//        return "{" + stat + ", base_stat=" + base_stat + '}';
+        return "stat{ " + stat + ", base_stat=" + base_stat + "}";
     }
     
     

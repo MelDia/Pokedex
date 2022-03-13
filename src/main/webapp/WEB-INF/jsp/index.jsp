@@ -10,7 +10,7 @@
                     <!-- Bootstrap CSS -->
                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
                           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-                    
+
                     <script src="https://kit.fontawesome.com/9bc29573df.js" crossorigin="anonymous"></script>
                     <script src="script.js" type="text/javascript" defer></script>
                     <style>
@@ -88,30 +88,38 @@
                     </style>
 
                     </head>
-                    <body>    
-                        <form action="" th:action="@{/searchPokemon}">
-                            <input type="text" name="pokemon" autocomplete="off">
+                    <body> 
+
+                        <form action="searchPokemon" method="POST">
+                            <input type="text" name="name"></input>
+                            <input type="submit" name="Submit"></input>
                         </form>
 
                         <div class="poke-card"> 
-                            <div class="poke-name"><span th:text="${nombre}" /></div>
+                            <div class="poke-name"><span th:text="${name}" /></div>
 
                             <div class="img-container">
-                                <img data-poke-img class="poke-img" src="./poke-shadow.png" />
-                                <span th:text="${sprite}" />
+
+                                <img data-poke-img class="poke-img" src="poke-shadow.png" />
+
                             </div>
 
                             <div>N° <span th:text="${id}" /></div>
                             <div class="poke-types">
                                 <div>
-                                    <span th:text="${type}" />
+                                    <p><span th:text="${type}" /></p>
                                 </div>
                             </div>
                             <div class="poke-stats">
-                                <p>Base Experience: <span th:text="${baseExperience}"/></p>
+                                <p>Base experience: <span th:text="${baseExperience}"/></p>
                                 <p>Height: <span th:text="${height}" /></p>
                                 <p>Weight: <span th:text="${weight}" /></p>
-                                <p><span th:text="${stat}"/>: <span th:text="${base_stat}"/> </p>
+                                <p><span th:text="${stats}"/> <span th:text="${baseStat}"/> </p>
+                                <p><span th:text="${stats1}"/> <span th:text="${baseStat1}"/> </p>
+                                <p><span th:text="${stats2}"/> <span th:text="${baseStat2}"/> </p>
+                                <p><span th:text="${stats3}"/> <span th:text="${baseStat3}"/> </p>
+                                <p><span th:text="${stats4}"/> <span th:text="${baseStat4}"/> </p>
+                                <p><span th:text="${stats5}"/> <span th:text="${baseStat5}"/> </p>
                             </div>
                         </div>
 
@@ -122,6 +130,11 @@
                                                 <label>Buscar Pokemon:</label>  <input type="text" th:field="*{search}" /></br>
                                     <input type="submit" value="Submit" />
                         </form>
+                        
+                        <p><span th:text="${type1}" th:if="${type1 != null}" /></p>
                         -->
+                          
+
                     </body>
+
                     </html>
