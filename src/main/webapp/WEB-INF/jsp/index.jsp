@@ -90,21 +90,23 @@
                     </head>
                     <body> 
 
-                        <form action="searchPokemon" method="POST">
-                            <input type="text" name="name"></input>
-                            <input type="submit" name="Submit"></input>
-                        </form>
+                        <div class="input-group rounded">
+                            <form action="searchPokemon" method="POST">
+                                <input type="text" name="name"   />
+                            </form>
+                        </div>
+                        
 
                         <div class="poke-card"> 
                             <div class="poke-name"><span th:text="${name}" /></div>
 
                             <div class="img-container">
 
-                                <img data-poke-img class="poke-img" src="poke-shadow.png" />
+                                <img data-poke-img class="poke-img" th:src="${sprite}" />
 
                             </div>
 
-                            <div>N° <span th:text="${id}" /></div>
+                            <div>N &#176; <span th:text="${id}" /></div>
                             <div class="poke-types">
                                 <div>
                                     <p><span th:text="${type}" /></p>
@@ -133,7 +135,7 @@
                         
                         <p><span th:text="${type1}" th:if="${type1 != null}" /></p>
                         -->
-                          
+
 
                     </body>
 
