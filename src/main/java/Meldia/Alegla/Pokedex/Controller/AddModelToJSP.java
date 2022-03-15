@@ -28,6 +28,9 @@ public class AddModelToJSP {
 			model.addAttribute("baseStat4", " ");
 			model.addAttribute("stats5", " ");
 			model.addAttribute("baseStat5", " ");
+                        model.addAttribute("ability", " ");
+                        model.addAttribute("ability2", " ");
+                        
 
 		} else {
 
@@ -53,6 +56,10 @@ public class AddModelToJSP {
 			model.addAttribute("baseStat4", pokemon.getStats().get(4).getBase_stat());
 			model.addAttribute("stats5", pokemon.getStats().get(5).getStat().getName());
 			model.addAttribute("baseStat5", pokemon.getStats().get(5).getBase_stat());
+                        model.addAttribute("ability", pokemon.getAbilities().get(0).getAbility().getName());
+                        model.addAttribute("ability2", pokemon.getAbilities().get(1).getAbility().getName());
+                        
+                        
 		}
 	}
 

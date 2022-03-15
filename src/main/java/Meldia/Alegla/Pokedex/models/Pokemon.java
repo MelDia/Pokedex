@@ -18,12 +18,13 @@ public class Pokemon implements Serializable {
     private List<Types> types;
     private Sprites sprites;
     private List<Stats> stats;
+    private List<Abilities> abilities;
 
     public Pokemon() {
     }
 
     public Pokemon(Integer id, String name, Integer base_experience, Integer height,
-            Integer weight, Sprites sprites, List<Types> types, List<Stats> stats) {
+            Integer weight, Sprites sprites, List<Types> types, List<Stats> stats, List<Abilities> abilities) {
         this.id = id;
         this.name = name;
         this.base_experience = base_experience;
@@ -32,6 +33,7 @@ public class Pokemon implements Serializable {
         this.sprites = sprites;
         this.types = types;
         this.stats = stats;
+        this.abilities = abilities;
     }
 
     public Integer getId() {
@@ -98,6 +100,14 @@ public class Pokemon implements Serializable {
         this.stats = stats;
     }
 
+    public List<Abilities> getAbilities() {
+        return abilities;
+    }
+
+    public void setAbilities(List<Abilities> abilities) {
+        this.abilities = abilities;
+    }    
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -134,6 +144,7 @@ public class Pokemon implements Serializable {
         sb.append(", types=").append(types);
         sb.append(", sprites=").append(sprites);
         sb.append(", stats=").append(stats);
+        sb.append(", abilities=").append(abilities);
         sb.append('}');
         return sb.toString();
     }
