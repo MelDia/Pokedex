@@ -30,12 +30,16 @@ public class PokeControl {
 	
 	@RequestMapping(value = "/searchPokemon", method = RequestMethod.POST)
 	public String searching(@ModelAttribute Pokemon pokemon, Model model) {
-		searchPokemon = pokemon.getName();
+		searchPokemon = pokemon.getName();                
+                //easter egg meme
+                if (searchPokemon.equalsIgnoreCase("vamo a calmarno")) searchPokemon = "squirtle";                
 		pokemon = consume.HttpConsume(searchPokemon, pokemon);
+                
 		log.info("Response Consume API = " + pokemon);
 		AddModelToJSP.addAttribute(model, pokemon);
 		return "index";
 	}
 
-	
 }
+
+
