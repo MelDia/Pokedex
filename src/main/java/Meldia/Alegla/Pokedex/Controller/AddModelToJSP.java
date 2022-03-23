@@ -3,7 +3,6 @@ package Meldia.Alegla.Pokedex.Controller;
 import org.springframework.ui.Model;
 
 import Meldia.Alegla.Pokedex.models.Pokemon;
-import Meldia.Alegla.Pokedex.models.Stats;
 
 public class AddModelToJSP {
 
@@ -60,7 +59,10 @@ public class AddModelToJSP {
             model.addAttribute("baseStat5", pokemon.getStats().get(5).getBase_stat());
             
             model.addAttribute("ability", pokemon.getAbilities().get(0).getAbility().getName());
-            model.addAttribute("ability2", pokemon.getAbilities().get(1).getAbility().getName());
+            if (pokemon.getAbilities().size() == 2) {
+                model.addAttribute("ability2", pokemon.getAbilities().get(1).getAbility().getName());
+            }
+            
         }
     }
 }
