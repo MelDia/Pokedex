@@ -17,7 +17,7 @@ public class PokeControl {
 	private String searchPokemon;
 	private static final Logger log = LoggerFactory.getLogger(PokeControl.class);
 	private Pokemon pokemon;
-	private HttpConsumeAPI consume = new HttpConsumeAPI(new RestTemplate());
+	private final HttpConsumeAPI consume = new HttpConsumeAPI(new RestTemplate());
 
 
 	@GetMapping("/index")

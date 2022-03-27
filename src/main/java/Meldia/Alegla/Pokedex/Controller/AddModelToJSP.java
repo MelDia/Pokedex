@@ -1,5 +1,6 @@
 package Meldia.Alegla.Pokedex.Controller;
 
+
 import org.springframework.ui.Model;
 
 import Meldia.Alegla.Pokedex.models.Pokemon;
@@ -31,38 +32,26 @@ public class AddModelToJSP {
             model.addAttribute("ability", " ");
             model.addAttribute("ability2", " ");
 
-        }else{
+        } else {
             model.addAttribute("id", pokemon.getId());
             model.addAttribute("name", pokemon.getName());
             model.addAttribute("baseExperience", pokemon.getBase_experience());
             model.addAttribute("height", pokemon.getHeight());
             model.addAttribute("weight", pokemon.getWeight());
-
-            model.addAttribute("type", pokemon.getTypes().get(0).getType().getName());
-            if (pokemon.getTypes().size() == 2) {
-                model.addAttribute("type2", pokemon.getTypes().get(1).getType().getName());
-            }
-            
             model.addAttribute("sprite", pokemon.getSprites().getFront_default());
-            
-            model.addAttribute("stats", pokemon.getStats().get(0).getStat().getName());
-            model.addAttribute("baseStat", pokemon.getStats().get(0).getBase_stat());            
-            model.addAttribute("stats1", pokemon.getStats().get(1).getStat().getName());
-            model.addAttribute("baseStat1", pokemon.getStats().get(1).getBase_stat());
-            model.addAttribute("stats2", pokemon.getStats().get(2).getStat().getName());
-            model.addAttribute("baseStat2", pokemon.getStats().get(2).getBase_stat());
-            model.addAttribute("stats3", pokemon.getStats().get(3).getStat().getName());
-            model.addAttribute("baseStat3", pokemon.getStats().get(3).getBase_stat());
-            model.addAttribute("stats4", pokemon.getStats().get(4).getStat().getName());
-            model.addAttribute("baseStat4", pokemon.getStats().get(4).getBase_stat());
-            model.addAttribute("stats5", pokemon.getStats().get(5).getStat().getName());            
-            model.addAttribute("baseStat5", pokemon.getStats().get(5).getBase_stat());
-            
-            model.addAttribute("ability", pokemon.getAbilities().get(0).getAbility().getName());
-            if (pokemon.getAbilities().size() == 2) {
-                model.addAttribute("ability2", pokemon.getAbilities().get(1).getAbility().getName());
+
+            for (int i = 0; i < pokemon.getTypes().size(); i++) {
+                model.addAttribute("type" + String.valueOf(i), pokemon.getTypes().get(i).getType().getName());
             }
-            
+
+            for (int i = 0; i < pokemon.getStats().size(); i++) {
+                model.addAttribute("stats" + String.valueOf(i), pokemon.getStats().get(i).getStat().getName());
+                model.addAttribute("baseStat" + String.valueOf(i), pokemon.getStats().get(i).getBase_stat());
+            }
+
+            for (int i = 0; i < pokemon.getAbilities().size(); i++) {
+                model.addAttribute("ability" + String.valueOf(i), pokemon.getAbilities().get(i).getAbility().getName());
+            }
         }
     }
 }

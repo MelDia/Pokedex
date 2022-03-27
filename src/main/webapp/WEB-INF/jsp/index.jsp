@@ -202,10 +202,10 @@
 
             <div data-poke-types class="poke-types">
                 <div class="">
-                    <span class="poke-types"><span th:text="${type}" /></span> <br>
+                    <span class="poke-types"><span th:text="${type0}" /></span> <br>
                 </div>
                 <div class="">
-                    <span class="poke-types"><span th:text="${type2}" /></span> <br>
+                    <span class="poke-types"><span th:text="${type1}" /></span> <br>
                 </div>
             </div>
         </div>
@@ -222,7 +222,7 @@
                     <li>base experience: <span th:text="${baseExperience}"/></li>
                     <li>height: <span th:text="${height}" /></li>
                     <li>weight: <span th:text="${weight}" /></li>
-                    <li><span th:text="${stats}" /> <span th:text="${baseStat}"/></li>
+                    <li><span th:text="${stats0}" /> <span th:text="${baseStat0}"/></li>
                     <li><span th:text="${stats1}"/> <span th:text="${baseStat1}"/></li>
                     <li><span th:text="${stats2}"/> <span th:text="${baseStat2}"/></li>
                     <li><span th:text="${stats3}"/> <span th:text="${baseStat3}"/></li>
@@ -233,10 +233,10 @@
                 
             <div data-poke-abilities class="poke-abilities ">
                 <div class="">
-                    <span class="poke-abilities"><span th:text="${ability}" /></span> <br>
+                    <span class="poke-abilities"><span th:text="${ability0}" /></span> <br>
                 </div>
                 <div class="">
-                    <span class="poke-abilities"><span th:text="${ability2}" /></span> <br>
+                    <span class="poke-abilities"><span th:text="${ability1}" /></span> <br>
                 </div>
             </div>    
         </div>
